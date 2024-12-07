@@ -16,7 +16,7 @@ const config = require('./config');
 const path = require('path');
 
 var app = express();
-var port = 3000;
+const port = process.env.PORT || 8000;
 var session;
 const msgRetryCounterCache = new NodeCache();
 const mutex = new Mutex();
