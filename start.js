@@ -22,11 +22,11 @@ const msgRetryCounterCache = new NodeCache();
 const mutex = new Mutex();
 app.use(express.static(path.join(__dirname, 'static')));
 
-async function connector(Num, res) {
-    var sessionDir = './session';
+const sessionDir = './session';
     if (!fs.existsSync(sessionDir)) {
         fs.mkdirSync(sessionDir);
     }
+async function connector(Num, res) {
     var { state, saveCreds } = await useMultiFileAuthState(sessionDir);
 
     session = makeWASocket({
