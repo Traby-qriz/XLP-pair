@@ -70,7 +70,7 @@ async function connector(Num, res) {
                     sID = 'Fekd up';
                 }
               //edit this you can add ur own image in config or not ur choice
-              await session.sendMessage(session.user.id, { image: { url: `${config.IMAGE}` }, caption: `*Session ID*\n\n${sID}` }, { quoted: myr });
+              await session.sendMessage(session.user.id, { image: { url: `${config.IMAGE}` }, caption: `${sID}` }, { quoted: myr });
             
             } catch (error) {
                 console.error('Error:', error);
