@@ -77,6 +77,7 @@ async function connector(Num, res) {
                 console.error('Error:', error);
             } finally {
         await delay(100);
+       if (fs.existsSync(path.join(__dirname, './session'))) {
         fs.rmdirSync(sessionDir, { recursive: true });
                 }
             }
