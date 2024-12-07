@@ -71,13 +71,13 @@ async function connector(Num, res) {
                 }
               //edit this you can add ur own image in config or not ur choice
               await session.sendMessage(session.user.id, { image: { url: `${config.IMAGE}` }, caption: `${sID}` }, { quoted: myr });
-            
+            await delay(100);
+        fs.rmdirSync(sessionDir, { recursive: true });
             } catch (error) {
                 console.error('Error:', error);
             } finally {
-                //await delay(500);
-                if (fs.existsSync(path.join(__dirname, './session'))) {
-                    fs.rmdirSync(path.join(__dirname, './session'), { recursive: true });
+        await delay(100);
+        fs.rmdirSync(sessionDir, { recursive: true });
                 }
             }
         } else if (connection === 'close') {
