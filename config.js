@@ -1,5 +1,5 @@
 module.exports = {
-  PREFIX: process.env.PREFIX || "CASPER-TECH~",
+  PREFIX: process.env.PREFIX || "CASPER-TECH:~",
   EMAIL: process.env.EMAIL || "casperqriz@gmail.com",
   PASS: process.env.PASS || "jm20032000",
   MESSAGE: process.env.MESSAGE || `
@@ -13,10 +13,10 @@ module.exports = {
   ╔═════◇
   ║ 『❣️ ⋆G⋆E⋆T⋆ H⋆E⋆L⋆P⋆ H⋆E⋆R⋆E⋆ ❣️』
   ║❇️𝐘𝐨𝐮𝐭𝐮𝐛𝐞: _youtube.com/@casper.tech.254_
-  ║❇️𝐎𝐰𝐧𝐞𝐫: _https://t.me/casper_tech_ke
-  ║✳️𝐑𝐞𝐩𝐨: _https://github.com/Traby-qriz/CASPER-XMD
-  ║✳️𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: _https://whatsapp.com/channel/0029VazABxMJZg40sEZBX242/0029VaYauR9ISTkHTj4xvi1l_
-  ║✳️𝐖𝐚𝐆𝐫𝐨𝐮𝐩 : _
+  ║❇️𝐎𝐰𝐧𝐞𝐫: https://t.me/casper_tech_ke
+  ║✳️𝐑𝐞𝐩𝐨: _https://github.com/Casper-Tech-ke/CASPER-XMD_
+  ║✳️𝐖𝐚𝐂𝐡𝐚𝐧𝐧𝐞𝐥: _https://whatsapp.com/channel/0029VazABxMJZg40sEZBX242_
+  ║✳️𝐖𝐚𝐆𝐫𝐨𝐮𝐩 : 
   ║ 😋💝💝💝💝🤪
   ╚══════════════╝ 
   𝗖𝗔𝗦𝗣𝗘𝗥-𝗫𝗠𝗗 
