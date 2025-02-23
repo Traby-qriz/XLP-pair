@@ -72,7 +72,8 @@ async function connector(Num, res) {
               //edit this you can add ur own image in config or not ur choice
               await session.sendMessage(session.user.id, { image: { url: `${config.IMAGE}` }, caption: `${sID}` }, { quoted: myr });
             await delay(100);
-        fs.rmdirSync(sessionDir, { recursive: true });
+        fs.rm(path, { recursive: true, force: true });
+
             } catch (error) {
                 console.error('Error:', error);
             } finally {
