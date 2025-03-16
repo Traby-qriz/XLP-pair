@@ -100,18 +100,26 @@ function reconn(reason) {
 }
 
 app.get('/pair', async (req, res) => {
-    var Num = req.query.code;
-    if (!Num) {
-        return res.status(418).json({ message: 'Phone number is required' });
+    const Num = req.query.code;
+    
+    // Add input validation
+    if (!Num || !/^\+?[\d\s-]+$/.test(Num)) {
+        return res.status(400).json({ 
+            message: 'Invalid phone number format. Please provide a valid phone number.' 
+        });
     }
-  
-  //you can remove mutex if you dont want to queue the requests
-    var release = await mutex.acquire();
+    
+    const release = await mutex.acquire();
     try {
         await connector(Num, res);
     } catch (error) {
-        console.log(error);
-        res.status(500).json({ error: "fekd up"});
+        console.error('Pairing error:', error);
+        if (!res.headersSent) {
+            res.status(500).json({ 
+                error: "An error occurred during the pairing process",
+                message: error.message 
+            });
+        }
     } finally {
         release();
     }
