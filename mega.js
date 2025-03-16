@@ -22,7 +22,14 @@ var auth = {
 var upload = (pth) => {
     return new Promise((resolve, reject) => {
         var myre = `${crypto.randomBytes(5).toString('hex')}${path.extname(pth)}`;
-        var storage = new mega.Storage(auth, () => {
+        var storage = new mega.Storage(auth);
+
+        storage.on('error', (error) => {
+            reject(new Error('Storage error: ' + error.message));
+        });
+
+        storage.on('ready', () => {
+            console.log('Storage is ready');
             try {
                 var Json = require(pth);
                 var Content = Buffer.from(JSON.stringify(Json));
@@ -33,14 +40,6 @@ var upload = (pth) => {
             } catch (error) {
                 reject(error);
             }
-        });
-
-        storage.on('error', (error) => {
-            reject(new Error('Storage error: ' + error.message));
-        });
-        
-        storage.on('ready', () => {
-            console.log('Storage is ready');
         });
     });
 };
